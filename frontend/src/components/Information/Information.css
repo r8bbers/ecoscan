@@ -1,0 +1,268 @@
+/* ── Page shell ── */
+.info-page {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* ── Hero ── */
+.info-hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 40px 48px;
+  text-align: center;
+}
+
+.info-title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #0f1f44;
+  margin: 0 0 16px 0;
+  line-height: 1.15;
+}
+
+.info-subtitle {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.7;
+  margin: 0 0 32px 0;
+}
+
+/* Search bar */
+.info-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 50px;
+  padding: 14px 24px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.info-search-icon {
+  color: #999999;
+  flex-shrink: 0;
+}
+
+.info-search-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #444444;
+  width: 100%;
+  background: transparent;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.info-search-input::placeholder {
+  color: #aaaaaa;
+}
+
+/* ── Material Cards Grid ── */
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 56px;
+}
+
+.material-card {
+  background: #ffffff;
+  border: 1px solid #e4e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blob decoration — top-right corner */
+.material-blob {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Card header: icon + title */
+.material-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.material-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.material-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f1f44;
+  margin: 0;
+}
+
+.material-desc {
+  font-size: 13.5px;
+  color: #555555;
+  line-height: 1.65;
+  margin: 0 0 18px 0;
+}
+
+/* Labels & values */
+.info-meta-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+}
+
+.info-meta-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+/* Metrics row */
+.info-metrics-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.info-metric-box {
+  flex: 1;
+  background: #f5f7ff;
+  border: 1px solid #e4e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-metric-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: #aaaaaa;
+  text-transform: uppercase;
+}
+
+.info-metric-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.metric-orange {
+  color: #ea580c;
+}
+
+.material-disposal {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Daily Sustainability Tips ── */
+.tips-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 40px 64px;
+}
+
+.tips-heading {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0d9488;
+  margin: 0 0 16px 0;
+}
+
+.tips-divider {
+  border: none;
+  border-top: 1px solid #e4e8f0;
+  margin: 0 0 24px 0;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.tip-card {
+  background: #ffffff;
+  border: 1px solid #e4e8f0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.tip-icon {
+  display: inline-flex;
+  color: #0d9488;
+  margin-bottom: 12px;
+}
+
+.tip-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px 0;
+}
+
+.tip-desc {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 968px) {
+  .material-grid {
+    grid-template-columns: 1fr;
+    padding: 0 24px 48px;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-section {
+    padding: 8px 24px 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .info-hero {
+    padding: 64px 24px 40px;
+  }
+
+  .info-title {
+    font-size: 32px;
+  }
+
+  .info-search-bar {
+    padding: 12px 18px;
+  }
+}
