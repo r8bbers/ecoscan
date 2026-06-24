@@ -12,6 +12,15 @@ from flask_cors import CORS
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.densenet import preprocess_input
+from tensorflow.keras.layers import Dense as _OriginalDense
+
+# Colab saves .keras files with quantization_config in Dense layer config.
+# Older local Keras builds don't recognise that key — patch it out before loading.
+class _PatchedDense(_OriginalDense):
+    @classmethod
+    def from_config(cls, config):
+        config.pop('quantization_config', None)
+        return super().from_config(config)
 
 # ── Logging ──────────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -42,7 +51,7 @@ def load_model_once():
         log.error(f'Model file not found: {MODEL_PATH}')
         return
     try:
-        model = load_model(MODEL_PATH)
+        model = load_model(MODEL_PATH, custom_objects={'Dense': _PatchedDense})
         log.info(f'Model loaded: {MODEL_PATH}')
         log.info(f'Input shape : {model.input_shape}')
         log.info(f'Output shape: {model.output_shape}')
